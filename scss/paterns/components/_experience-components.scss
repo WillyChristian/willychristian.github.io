@@ -1,0 +1,79 @@
+@use '../../globals' as *;
+
+.experience__content--items{
+  display: flex;
+  margin-bottom: 1rem;
+  padding: .5rem 0;
+
+  @include breakpoint($wide) {
+    justify-content: flex-start;
+  }
+
+  .description  {
+    box-shadow: $shadowSmall;
+    padding: 1rem;
+    text-align: end;
+
+    @include breakpoint($wide) {
+      max-width: 50rem;
+    }
+
+    &__title {
+      color: $black200;
+    }
+    &__period {
+      color: $black400;
+      transform: scale(0.3);
+    }
+    &__skills {
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        li {
+          margin: 0.5rem;
+          transition: transform 200ms ease;
+          i {
+            font-size: 1.5rem;
+          }
+          &:hover {
+            transform: scale(1.5);
+          }
+        }
+      }
+    }
+  }
+
+  .card__container {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    align-items: center;
+    width: 100%;
+
+
+    .card {
+      background-color: $black300;
+      justify-self: start;
+      width: max-content;
+      @include breakpoint($wide) {
+      }
+
+      p {
+        font-size: 1.5rem;
+        color: $white;
+      }
+    }
+
+    .bullet {
+      aspect-ratio: 1;
+      background-color: $blue500;
+      border-radius: 50%;
+      border: .5rem solid $black300;
+      width: 3rem;
+      @include breakpoint($wide) {
+        justify-self: start;
+        margin-left: 1rem;
+      }
+    }
+  }
+}

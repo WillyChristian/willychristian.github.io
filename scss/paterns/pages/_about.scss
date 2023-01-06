@@ -1,0 +1,28 @@
+@use '../../globals' as *;
+
+.section__about {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  .about__content {
+    display: grid;
+    
+    @include breakpoint($tablet) {
+      width: $tabletContent;
+    }
+    @include breakpoint($laptop) {
+      width: $laptopContent;
+    }
+    @include breakpoint($wide) {
+      grid-template-columns: 15rem 1fr;
+      width: $wideContent;
+    }
+
+    &-title {
+      font-size: 5rem;
+    }
+  }
+}
+
+

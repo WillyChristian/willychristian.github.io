@@ -1,0 +1,10 @@
+// Box Shadow
+$shadowSmall: -5px 15px 15px -10px hsl(0,0%,75%);
+$shadowMedium: 0px 10px 10px 0px hsl(0,0%,45%);
+$shadowLarge: 0px 10px 15px 5px hsl(0,0%,45%);
+
+// Breakpoint changes
+$tabletContent: 764px;
+$laptopContent: 998px;
+$wideContent: 1200px;
+$ultraWideContent: 1400px;

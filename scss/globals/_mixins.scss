@@ -1,0 +1,42 @@
+
+// Utilities
+@mixin flex-box($justify, $align) {
+  align-items: #{$align};
+  display: flex;
+  justify-content: #{$justify};
+}
+
+@mixin font-normal($font) {
+  font-family: #{$font};
+  font-weight: 400;
+}
+@mixin font-bold($font) {
+  font-family: #{$font};
+  font-weight: 700;
+}
+
+@mixin pseudoLine($width, $height) {
+  content: '';
+  border-radius: calc($height * 2);
+  position: absolute;
+  width: $width;
+  height: $height;
+}
+@mixin spanLine($width, $height) {
+  border-radius: calc($height * 2);
+  position: absolute;
+  width: $width;
+  height: $height;
+}
+
+//Breakpoints
+$tablet: '768px';
+$laptop: '1024px';
+$wide: '1440px';
+$u-wide: '1700px';
+
+@mixin breakpoint($var) {
+  @media (min-width: $var) {
+    @content;
+  }
+}

@@ -1,0 +1,70 @@
+@use '../../globals' as *;
+
+header {
+  isolation: isolate;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  @include flex-box('center', 'center');
+
+  .navbar {
+    @include flex-box('space-between', 'center');
+    padding: 1rem;
+    @include breakpoint($wide) {
+      width: $wideContent;
+    }
+    &__avatar {
+      display: none;
+    }
+    &__contact {
+      @include flex-box('space-between', 'center');
+      background-color: $pureWhite;
+      border-radius: 1rem;
+      position: relative;
+
+      &--icon {
+        padding: .5rem;
+        img {
+          aspect-ratio: 1;
+          height: 2.5rem;
+        }
+        &.mail {
+          pointer-events: none;
+        }
+      }
+      
+      &::before,
+      &::after {
+        background-color: $pureWhite;
+        bottom: 47%;
+        position: absolute;
+      }
+
+      &::before {
+        @include breakpoint($wide) {
+          @include pseudoLine(20rem, 2px);
+          left: -20rem;
+        }
+      }
+      &::after {
+        @include breakpoint($wide) {
+          @include pseudoLine(11rem, 2px);
+          right: -11rem;
+        }
+      }
+    }
+    &__list {
+      // Needs Work: Navbar should be visible when in mobile, only. For desktop only scroll
+      display: none;
+      // @include flex-box('flex-end', 'center');
+      li {
+        list-style: none;
+        padding: 1rem;
+        a {
+          color: $black200;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
