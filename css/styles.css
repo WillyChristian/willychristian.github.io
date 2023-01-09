@@ -172,6 +172,19 @@
   padding: 0.5rem;
 }
 
+.section__contact {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 1440px) {
+  .section__contact .contact__content {
+    width: 1170px;
+    display: grid;
+    justify-content: center;
+  }
+}
+
 .section__experience {
   background: linear-gradient(90deg, hsl(0deg, 0%, 90%) 62%, hsl(0deg, 0%, 30%) 62%);
   isolation: isolate;
@@ -334,7 +347,7 @@ main .section__container .section__home, main .section__container .section__expe
   margin-bottom: 1rem;
   width: 100vw;
 }
-main .section__container .section__about {
+main .section__container .section__about, main .section__container .section__contact {
   height: 70vh;
   margin-bottom: 1rem;
   width: 100vw;
