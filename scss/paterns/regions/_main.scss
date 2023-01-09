@@ -1,11 +1,21 @@
 @use '../../globals' as *;
 main {
-  overflow: hidden;
   .section__container {
     // height: 800vh; Needs review: Should be revalidate according to the animation needs
-    section {
-      height: 100vh;
-      width: 100vw;
+    .section {
+      &__home,
+      &__experience,
+      &__projects {
+        height: 100vh;
+        margin-bottom: 1rem;
+        width: 100vw;
+      }
+      &__about,
+      &__contact {
+        height: 70vh;
+        margin-bottom: 1rem;
+        width: 100vw;
+      }
     }
   }
 }
