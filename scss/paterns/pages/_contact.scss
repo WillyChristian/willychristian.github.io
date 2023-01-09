@@ -1,0 +1,17 @@
+@use '../../globals' as *;
+
+.section__contact{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  .contact {
+    &__content{
+      @include breakpoint($wide) {
+        width: $wideContent;
+        display: grid;
+        justify-content: center;
+      }
+    }
+  }
+}
