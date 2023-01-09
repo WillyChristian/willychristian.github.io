@@ -174,15 +174,97 @@
 
 .section__contact {
   align-items: center;
+  background-color: hsl(0deg, 0%, 60%);
   display: flex;
   justify-content: center;
 }
+.section__contact .contact__content {
+  background-image: url("../../../assets/img/contact/contact-pexels-nikolaos-dimou.jpg");
+  background-position: 0 -15rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 @media (min-width: 1440px) {
   .section__contact .contact__content {
-    width: 1170px;
     display: grid;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 11rem;
+    width: 1170px;
   }
+}
+@media (min-width: 1440px) and (min-width: 1440px) {
+  .section__contact .contact__content {
+    gap: 3rem;
+    grid-template-columns: 15rem auto;
+  }
+}
+.section__contact .contact__title {
+  align-self: center;
+  color: hsl(0deg, 0%, 90%);
+  grid-column: 1/1;
+  justify-self: end;
+  position: relative;
+}
+@media (min-width: 1440px) {
+  .section__contact .contact__title {
+    padding: 60px 0;
+  }
+}
+.section__contact .contact__title::before {
+  content: "";
+  border-radius: 4px;
+  position: absolute;
+  width: 10rem;
+  height: 2px;
+  background-color: hsl(0deg, 0%, 90%);
+  bottom: 0;
+  right: 0;
+  rotate: 90deg;
+}
+@media (min-width: 1440px) {
+  .section__contact .contact__title::before {
+    transform: translate(-5rem, -7rem);
+  }
+}
+.section__contact .contact__title h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: end;
+}
+.section__contact .contact__title small {
+  font-weight: bold;
+  text-align: end;
+}
+.section__contact .contact__links {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-items: center;
+  list-style: none;
+  width: 100%;
+}
+@media (min-width: 1440px) {
+  .section__contact .contact__links {
+    grid-column: 2/3;
+    padding: 4rem 1rem;
+  }
+}
+.section__contact .contact__links li a {
+  align-items: center;
+  color: hsl(0deg, 0%, 90%);
+  display: flex;
+  flex-direction: row-reverse;
+  font-weight: bold;
+  justify-content: flex-end;
+  padding: 1rem 1rem 0 0;
+  text-decoration: none;
+}
+.section__contact .contact__links li:last-of-type .contact__icon {
+  font-size: 1.2rem;
+}
+.section__contact .contact__icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
 }
 
 .section__experience {

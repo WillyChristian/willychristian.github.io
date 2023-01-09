@@ -2,16 +2,97 @@
 
 .section__contact{
   align-items: center;
+  background-color: $black600;
   display: flex;
   justify-content: center;
 
+  
   .contact {
     &__content{
+      background-image: url('../../../assets/img/contact/contact-pexels-nikolaos-dimou.jpg');
+      background-position: 0 -15rem;
+      background-repeat: no-repeat;
+      background-size: cover;
+
       @include breakpoint($wide) {
-        width: $wideContent;
         display: grid;
-        justify-content: center;
+        justify-content: flex-start;
+        padding-left: 11rem;
+        width: $wideContent;
+
+        @include breakpoint($wide) {
+          gap: 3rem;
+          grid-template-columns: 15rem auto;
+        }
       }
+    }
+    &__title {
+      align-self: center;
+      color: $white;
+      grid-column: 1/1;
+      justify-self: end;
+      position: relative;
+      @include breakpoint($wide) {
+        padding: 60px 0;
+      }
+
+      &::before {
+        @include pseudoLine(10rem, 2px);
+        background-color: $white;
+        bottom: 0;
+        right: 0;
+        rotate: 90deg;
+
+        @include breakpoint($wide) {
+          transform: translate(-5rem,-7rem)
+        }
+      }
+
+      h3 {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: end;
+      }
+      small {
+        font-weight: bold;
+        text-align: end;
+      }
+
+
+    }
+    &__links {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-items: center;
+      list-style: none;
+      width: 100%;
+      
+      @include breakpoint($wide) {
+        grid-column: 2/3;
+        padding: 4rem 1rem;
+      }
+
+      li a {
+        align-items: center;
+        color: $white;
+        display: flex;
+        flex-direction: row-reverse;
+        font-weight: bold;
+        justify-content: flex-end;
+        padding: 1rem 1rem 0 0;
+        text-decoration: none;
+      }
+
+      li:last-of-type {
+        .contact__icon {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    &__icon {
+      font-size: 1.5rem;
+      margin-right: 1rem;
     }
   }
 }
