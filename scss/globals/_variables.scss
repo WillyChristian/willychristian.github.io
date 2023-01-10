@@ -4,7 +4,13 @@ $shadowMedium: 0px 10px 10px 0px hsl(0,0%,45%);
 $shadowLarge: 0px 10px 15px 5px hsl(0,0%,45%);
 
 // Breakpoint changes
-$tabletContent: 764px;
-$laptopContent: 998px;
+$tabletContent: 648px;
+$laptopContent: 932px;
 $wideContent: 1170px;
 $ultraWideContent: 1400px;
+
+// Breakpoint values
+$tablet: 768px;
+$laptop: 992px;
+$wide: 1349px;
+$u-wide: 1700px;
