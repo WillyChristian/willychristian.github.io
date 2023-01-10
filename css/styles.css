@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@400;700&display=swap");
 .section__home {
-  align-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  position: relative;
   justify-content: center;
-  align-items: center;
+  position: relative;
 }
 @media (min-width: 992px) {
   .section__home {
@@ -72,14 +71,14 @@
   }
 }
 .section__home .home__content-image {
-  position: relative;
   grid-column: 1/4;
   grid-row: 1/spam;
+  position: relative;
 }
 @media (min-width: 992px) {
   .section__home .home__content-image > img {
-    width: 318px;
     height: 398px;
+    width: 318px;
   }
 }
 .section__home .home__content-wrapper {

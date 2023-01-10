@@ -1,12 +1,11 @@
 @use '../../globals' as *;
 
 .section__home {
-  align-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  position: relative;
   justify-content: center;
-  align-items: center;
+  position: relative;
   @include breakpoint($laptop) {
     background: linear-gradient(90deg, $black300 36%, $white 36%);
   }
@@ -63,14 +62,14 @@
       }
 
       &-image {
-        position: relative;
         grid-column: 1/4;
         grid-row: 1 / spam;
+        position: relative;
 
         > img {
           @include breakpoint($laptop) {
-            width: 318px;
             height: 398px;
+            width: 318px;
           }
         }
       }
