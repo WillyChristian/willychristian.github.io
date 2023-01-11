@@ -8,46 +8,67 @@
 
   .projects {
     &__title {
+      font-size: 2rem;
       position: absolute;
-      
+      top: 6rem;
+
+      @include breakpoint($laptop) {
+        left: calc((100vw - $laptopContent) / 2);
+      }
       @include breakpoint($wide) {
-        font-size: 2rem;
         left: calc((100vw - $wideContent) / 2);
-        top: 6rem;
       }
 
       &::after {
         @include pseudoLine(25rem, 4px);
         background-color: $black300;
+        left: -25.2rem;
         position: inherit;
         top: calc(50% - 2px);
-        left: -25.2rem;
       }
     }
     &__content {
+      column-gap: 30px;
       display: grid;
-
+      row-gap: 15px;
+      
+      @include breakpoint($laptop) {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(6, 30px);
+        transform: translateY(-3rem);
+        width: $laptopContent;
+      }
       @include breakpoint($wide) {
-        column-gap: 30px;
-        grid-template-columns: repeat(12, 70px);
         grid-template-rows: repeat(12, 30px);
-        row-gap: 15px;
+        width: $wideContent;
       }
 
       &-banner {
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
-        position: relative;
 
         .description__container {
           position: absolute;
-          top: 25rem;
+
+          @include breakpoint($laptop) {
+            top: 13rem;
+          }
+          @include breakpoint($wide) {
+            top: 25rem;
+          }
 
           &-title {
             margin-bottom: 0.4rem;
           }
-
+          &-text {
+            @include breakpoint($laptop) {
+              font-size: 0.8rem;
+            }
+            @include breakpoint($wide) {
+              font-size: unset;
+            }
+          }
           &-link {
             color: $black300;
             display: flex;
@@ -85,18 +106,38 @@
       .financial {
         background-image: url('../../../assets/img/projects/financial-pexels-pixabay.jpg');
         grid-column: 1/5;
-        grid-row: 1/9;
+
+        @include breakpoint($laptop) {
+          grid-row: 1/5;
+        }
+        @include breakpoint($wide) {
+          grid-row: 1/9;
+        }
       }
       .pcaas {
         background-image: url('../../../assets/img/projects/pcass-cottonbro-studio.jpg');
         grid-column: 5/9;
-        grid-row: 2/10;
+
+        @include breakpoint($laptop) {
+          background-position: 0 -10rem; 
+          grid-row: 2/6;
+        }
+        @include breakpoint($wide) {
+          background-position: unset;
+          grid-row: 2/10;
+        }
       }
       .sales {
         background-image: url('../../../assets/img/projects/repair-pexels-tima-miroshnichenko.jpg');
         background-position: 0;
         grid-column: 9/13;
-        grid-row: 3/11;
+
+        @include breakpoint($laptop) {
+          grid-row: 3/7;
+        }
+        @include breakpoint($wide) {
+          grid-row: 3/11;
+        }
       }
     }
   }
