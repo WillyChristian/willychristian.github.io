@@ -4,37 +4,41 @@
   align-items: center;
   display: flex;
   justify-content: center;
-    
-  @include breakpoint($wide) {
-  background-position: calc((100vw - $wideContent) / 2) 0;
-  }
-  
 
   .about__content {
     display: grid;
     justify-content: center;
     position: relative;
 
-
     @include breakpoint($tablet) {
       width: $tabletContent;
     }
     @include breakpoint($laptop) {
+      column-gap: 30px;
+      grid-template-columns: repeat(12, 1fr);
+      overflow: hidden;
       width: $laptopContent;
     }
     @include breakpoint($wide) {
       column-gap: 1rem;
-      grid-template-columns: repeat(12, 70px);
       grid-template-rows: auto auto;
+      overflow: initial;
       width: $wideContent;
     }
+
     &-background {
-      background-image: url('../../../assets/img/bg-negative-space.jpg');
+      background-image: url('../../../assets/img/about/bg-negative-space.jpg');
       background-repeat: no-repeat;
       background-size: contain;
       position: absolute;
       z-index: -1;
 
+      @include breakpoint($laptop){
+        left: -2rem;
+        padding: 10rem;
+        top: -2rem;
+        width: 100%;
+      }
       @include breakpoint($wide){
         background-position: 1rem;
         padding: 12rem;
@@ -45,26 +49,37 @@
     &-title {
       align-items: flex-start;
       display: flex;
+      grid-row: 1/spam;
       justify-content: flex-end;
       
+      @include breakpoint($laptop) {
+        font-size: 3rem;
+        grid-column: 1/6;
+        height: 11rem;
+        padding: 1rem 0 1rem 1rem;
+      }
+
       @include breakpoint($wide) {
         font-size: 4rem;
         grid-column: 1/8;
-        grid-row: 1/spam;
         height: 11rem;
         padding: 1rem 0 1rem 1rem;
       }
       
       h3 {
-        @include breakpoint($wide) {
-          color: $white;
-        }    
+        color: $white;  
       }
     }
     &-text {
       background-color: $white;
-      grid-column: 8/spam;
       grid-row: 1/spam;
+
+      @include breakpoint($laptop) {
+        grid-column: 6/spam;
+      }
+      @include breakpoint($wide) {
+        grid-column: 8/spam;
+      }
       
       p {
         margin: 0 .3rem;
@@ -73,5 +88,3 @@
     }
   }
 }
-
-
