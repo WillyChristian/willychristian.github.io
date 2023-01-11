@@ -44,10 +44,6 @@
         bottom: 1rem;
         right: -70%;
         rotate: 90deg;
-
-        @include breakpoint($wide) {
-          transform: translate(-5rem, -7rem);
-        }
       }
 
       h3 {

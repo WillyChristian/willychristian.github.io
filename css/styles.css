@@ -248,11 +248,6 @@
   right: -70%;
   rotate: 90deg;
 }
-@media (min-width: 1349px) {
-  .section__contact .contact__title::before {
-    transform: translate(-5rem, -7rem);
-  }
-}
 .section__contact .contact__title h3 {
   font-size: 2rem;
   font-weight: bold;
