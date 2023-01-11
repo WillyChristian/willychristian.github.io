@@ -2,10 +2,10 @@
 
 .section__experience {
   background: linear-gradient(90deg, $white 62%, $black300 62%);
-  position: relative;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  position: relative;
 
   .experience {
     &__title {
@@ -39,7 +39,7 @@
         }
         .title-decoration__left {
           left: 100%;
-          margin-left: 1rem; 
+          margin-left: 1rem;
           @include breakpoint($laptop) {
             top: calc(50% - 1px);
             width: 250px;
