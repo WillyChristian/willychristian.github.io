@@ -196,51 +196,56 @@
 
 .section__contact {
   align-items: center;
-  background-color: hsl(0deg, 0%, 60%);
+  background-image: url("../../../assets/img/contact/contact-pexels-nikolaos-dimou.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
 }
+@media (min-width: 992px) {
+  .section__contact {
+    background-position: 0 -12rem;
+  }
+}
+@media (min-width: 1349px) {
+  .section__contact {
+    background-position: 0 -15rem;
+  }
+}
 .section__contact .contact__content {
-  background-image: url("../../../assets/img/contact/contact-pexels-nikolaos-dimou.jpg");
-  background-position: 0 -15rem;
-  background-repeat: no-repeat;
-  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 992px) {
+  .section__contact .contact__content {
+    width: 932px;
+  }
 }
 @media (min-width: 1349px) {
   .section__contact .contact__content {
-    display: grid;
-    justify-content: flex-start;
-    padding-left: 11rem;
     width: 1170px;
   }
 }
-@media (min-width: 1349px) and (min-width: 1349px) {
-  .section__contact .contact__content {
-    gap: 3rem;
-    grid-template-columns: 15rem auto;
-  }
-}
 .section__contact .contact__title {
-  align-self: center;
   color: hsl(0deg, 0%, 90%);
-  grid-column: 1/1;
-  justify-self: end;
+  display: flex;
+  flex-direction: column;
   position: relative;
 }
-@media (min-width: 1349px) {
+@media (min-width: 992px) {
   .section__contact .contact__title {
-    padding: 60px 0;
+    margin-right: 5rem;
   }
 }
 .section__contact .contact__title::before {
   content: "";
   border-radius: 4px;
   position: absolute;
-  width: 10rem;
+  width: 7rem;
   height: 2px;
   background-color: hsl(0deg, 0%, 90%);
-  bottom: 0;
-  right: 0;
+  bottom: 1rem;
+  right: -70%;
   rotate: 90deg;
 }
 @media (min-width: 1349px) {
@@ -624,32 +629,34 @@ header .navbar__list li a {
 
 main .section__container .section__home, main .section__container .section__experience, main .section__container .section__projects {
   height: 100vh;
-  margin-bottom: 1rem;
-  width: 100vw;
+  width: 98.9vw;
 }
-main .section__container .section__about, main .section__container .section__contact {
+main .section__container .section__about {
   height: 70vh;
-  margin-bottom: 1rem;
-  width: 100vw;
+  width: 98.9vw;
+}
+main .section__container .section__contact {
+  height: 40vh;
+  width: 98.9vw;
 }
 
 footer {
+  background-color: hsl(192deg, 100%, 40%);
   bottom: 0;
   display: flex;
   justify-content: flex-end;
-  padding: 0.5rem;
-  position: fixed;
+  padding: 1rem;
   width: 100%;
 }
-footer small a {
-  color: hsl(0deg, 0%, 50%);
+footer p {
+  color: hsl(0deg, 0%, 90%);
+}
+footer p a {
   text-decoration: none;
+  color: hsl(0deg, 0%, 90%);
 }
-footer small a:hover {
-  color: hsl(238deg, 85%, 40%);
-}
-footer small a:visited, footer small a:active {
-  color: hsl(0deg, 0%, 50%);
+footer p a:hover {
+  color: hsl(238deg, 85%, 65%);
 }
 
 .experience__content--items {

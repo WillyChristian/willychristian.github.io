@@ -1,20 +1,20 @@
 @use '../../globals' as *;
 main {
   .section__container {
-    // height: 800vh; Needs review: Should be revalidate according to the animation needs
     .section {
       &__home,
       &__experience,
       &__projects {
         height: 100vh;
-        margin-bottom: 1rem;
-        width: 100vw;
+        width: 98.9vw;
       }
-      &__about,
-      &__contact {
+      &__about{
         height: 70vh;
-        margin-bottom: 1rem;
-        width: 100vw;
+        width: 98.9vw;
+      }
+      &__contact {
+        height: 40vh;
+        width: 98.9vw;
       }
     }
   }
