@@ -28,13 +28,7 @@
   height: $height;
 }
 
-@mixin gridLayout($times, $colSize) {
-  display: grid;
-  grid-template-columns: repeat($times, $colSize);
-}
-
 //Breakpoints
-
 @mixin breakpoint($var) {
   @media (min-width: $var) {
     @content;
