@@ -1,19 +1,23 @@
 @use '../../globals' as *;
 
-.experience__content--items{
-  display: flex;
+.experience__content--items {
+  display: grid;
   margin-bottom: 1rem;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 
+  @include breakpoint($laptop) {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+  }
   @include breakpoint($wide) {
-    justify-content: flex-start;
   }
 
-  .description  {
+  .description {
     box-shadow: $shadowSmall;
     padding: 1rem;
     text-align: end;
-
+    grid-column: 1/9;
+    
     @include breakpoint($wide) {
       max-width: 50rem;
     }
@@ -34,7 +38,12 @@
           margin: 0.5rem;
           transition: transform 200ms ease;
           i {
-            font-size: 1.5rem;
+            @include breakpoint($laptop) {
+              font-size: 1.3rem;
+            }
+            @include breakpoint($wide) {
+              font-size: 1.5rem;
+            }
           }
           &:hover {
             transform: scale(1.5);
@@ -42,14 +51,22 @@
         }
       }
     }
+    &__resume {
+      @include breakpoint($laptop) {
+        font-size: 0.8rem;
+      }
+      @include breakpoint($wide) {
+        font-size: 1em;
+      }
+    }
   }
 
   .card__container {
+    grid-column: 9/spam;
     display: grid;
     grid-template-columns: 5rem 1fr;
     align-items: center;
     width: 100%;
-
 
     .card {
       background-color: $black300;
@@ -59,8 +76,13 @@
       }
 
       p {
-        font-size: 1.5rem;
         color: $white;
+        @include breakpoint($laptop) {
+          font-size: 1.3rem;
+        }
+        @include breakpoint($wide) {
+          font-size: 1.5rem;
+        }
       }
     }
 
@@ -68,11 +90,13 @@
       aspect-ratio: 1;
       background-color: $blue500;
       border-radius: 50%;
-      border: .5rem solid $black300;
+      border: 0.5rem solid $black300;
       width: 3rem;
+
+      @include breakpoint($laptop) {
+        transform: translateX(-1rem);
+      }
       @include breakpoint($wide) {
-        justify-self: start;
-        margin-left: 1rem;
       }
     }
   }
