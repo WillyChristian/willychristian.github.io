@@ -1,57 +1,62 @@
 @use '../../globals' as *;
 
 .section__experience {
-  background: linear-gradient(90deg, $white 62%,$black300 62%);
-  isolation: isolate;
+  background: linear-gradient(90deg, $white 62%, $black300 62%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
 
-  // Needs work: Should be revalidate when it comes to mobile versions
-  @include breakpoint($tablet) {
-    display: grid;
-    gap: 15px;
-    grid-template-columns: repeat(6,10%) repeat(3, 1fr);
-    grid-template-rows: repeat(5,1fr) ;
-  }
-  @include breakpoint($laptop) {
-    gap: 15px;
-    grid-template-columns: repeat(6,10%) repeat(3, 1fr);
-    grid-template-rows: repeat(5,1fr) ;
-  }
-  @include breakpoint($wide) {
-    gap: 15px;
-    grid-template-columns: repeat(6,10%) repeat(3, 1fr);
-    grid-template-rows: repeat(5,1fr) ;
-  }
-  
-  .experience { 
+  .experience {
     &__title {
-      grid-column: 8/8;
-      grid-row: 3/spam;
-      
-      &--title {
-        @include breakpoint($wide) {
-          color: $pureWhite; 
-          font-size: 2rem;
-          position: relative;
-          rotate: 90deg;
+      position: absolute;
+      top: 45vh;
 
-          .title-decoration__left {
-            background-color: $pureWhite;
-            display: initial;
-            height: 3px;
-            left: 100%;
-            margin-left: 1rem;
-            position: absolute;
+      @include breakpoint($laptop) {
+        right: calc((100vw - $laptopContent) / 2 - 5rem);
+      }
+      @include breakpoint($wide) {
+        right: calc((100vw - $wideContent) / 2 - 5rem);
+      }
+
+      &--title {
+        color: $pureWhite;
+        rotate: 90deg;
+
+        @include breakpoint($laptop) {
+          font-size: 1.5rem;
+        }
+        @include breakpoint($wide) {
+          font-size: 2rem;
+        }
+
+        .title-decoration__left,
+        .title-decoration__right {
+          background-color: $pureWhite;
+          display: initial;
+          height: 3px;
+          position: absolute;
+        }
+        .title-decoration__left {
+          left: 100%;
+          margin-left: 1rem;
+          @include breakpoint($laptop) {
+            top: calc(50% - 1px);
+            width: 250px;
+          }
+          @include breakpoint($wide) {
             top: calc(50% - 1.5px);
             width: 412px;
           }
-          .title-decoration__right {
-            background-color: $pureWhite;
-            display: initial;
-            height: 3px;
-            margin-right: 1rem;
-            position: absolute;
-            right: 100%;
+        }
+        .title-decoration__right {
+          margin-right: 1rem;
+          right: 100%;
+          @include breakpoint($laptop) {
+            top: calc(50% - 1px);
+            width: 212px;
+          }
+          @include breakpoint($wide) {
             top: calc(50% - 1.5px);
             width: 264px;
           }
@@ -59,20 +64,17 @@
       }
     }
     &__content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      
-      // Needs work
+      margin: 0 auto;
       @include breakpoint($tablet) {
+        width: $tabletContent;
       }
 
       @include breakpoint($laptop) {
+        width: $laptopContent;
       }
-      
+
       @include breakpoint($wide) {
-        grid-column: 2/9;
-        grid-row: 2/ -2 ;
+        width: $wideContent;
       }
     }
   }

@@ -1,51 +1,49 @@
 @use '../../globals' as *;
 
-.section__contact{
+.section__contact {
   align-items: center;
-  background-color: $black600;
+  background-image: url('../../../assets/img/contact/contact-pexels-nikolaos-dimou.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
+  @include breakpoint($laptop) {
+    background-position: 0 -12rem;
+  }
+  @include breakpoint($wide) {
+    background-position: 0 -15rem;
+  }
 
-  
   .contact {
-    &__content{
-      background-image: url('../../../assets/img/contact/contact-pexels-nikolaos-dimou.jpg');
-      background-position: 0 -15rem;
-      background-repeat: no-repeat;
-      background-size: cover;
+    &__content {
+      display: flex;
+      align-items: center;
 
+      @include breakpoint($laptop) {
+        width: $laptopContent;
+      }
       @include breakpoint($wide) {
-        display: grid;
-        justify-content: flex-start;
-        padding-left: 11rem;
         width: $wideContent;
-
-        @include breakpoint($wide) {
-          gap: 3rem;
-          grid-template-columns: 15rem auto;
-        }
       }
     }
     &__title {
-      align-self: center;
       color: $white;
-      grid-column: 1/1;
-      justify-self: end;
+      display: flex;
+      flex-direction: column;
       position: relative;
+
+      @include breakpoint($laptop) {
+        margin-right: 5rem;
+      }
       @include breakpoint($wide) {
-        padding: 60px 0;
       }
 
       &::before {
-        @include pseudoLine(10rem, 2px);
+        @include pseudoLine(7rem, 2px);
         background-color: $white;
-        bottom: 0;
-        right: 0;
+        bottom: 1rem;
+        right: -70%;
         rotate: 90deg;
-
-        @include breakpoint($wide) {
-          transform: translate(-5rem,-7rem)
-        }
       }
 
       h3 {
@@ -57,8 +55,6 @@
         font-weight: bold;
         text-align: end;
       }
-
-
     }
     &__links {
       display: flex;
@@ -67,7 +63,7 @@
       justify-items: center;
       list-style: none;
       width: 100%;
-      
+
       @include breakpoint($wide) {
         grid-column: 2/3;
         padding: 4rem 1rem;

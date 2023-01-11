@@ -1,4 +1,3 @@
-
 // Utilities
 @mixin flex-box($justify, $align) {
   align-items: #{$align};
@@ -30,11 +29,6 @@
 }
 
 //Breakpoints
-$tablet: '768px';
-$laptop: '1024px';
-$wide: '1440px';
-$u-wide: '1700px';
-
 @mixin breakpoint($var) {
   @media (min-width: $var) {
     @content;

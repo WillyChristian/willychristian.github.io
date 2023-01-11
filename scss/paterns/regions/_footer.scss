@@ -1,22 +1,20 @@
 @use '../../globals' as *;
 
 footer {
+  background-color: $blue400;
   bottom: 0;
   display: flex;
   justify-content: flex-end;
-  padding: .5rem;
-  position: fixed;
+  padding: 1rem;
   width: 100%;
-  small a {
-    color: $black400;
-    text-decoration: none;
-    &:hover {
-      color: $darkblue400;
-    }
-
-    &:visited,
-    &:active {
-      color: $black400;
+  p {
+    color: $white;
+    a {
+      text-decoration: none;
+      color: $white;
+      &:hover {
+        color: $darkblue700;
+      }
     }
   }
 }
