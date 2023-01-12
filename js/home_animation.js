@@ -1,28 +1,23 @@
-const contentImage = $('.content__image > img');
-const contentStack = $('.content__stack');
-const contentText = $('.content__text');
-const homeSection = $('.section__home');
-const contactContainer = $('.navbar__contact');
-const contentTitle = $('.title');
+const homeSection = document.querySelector('.section__home');
+const contentTitle = document.querySelector('.home__title-title');
+const arrow = document.querySelector('.wrapper-stack > i');
 
 export default function HomeAnimation() {
-  const timeline = gsap.timeline({
+  gsap.to(contentTitle, {
     scrollTrigger: {
       id: 'Home',
-      pin: $('.section__container'),
       trigger: homeSection,
       start: 'top top-=1',
-      end: 'bottom',
+      end: '+=200',
       scrub: 1,
     },
+    opacity: 0
   });
 
-  timeline
-    .to(contentImage, { opacity: 0})
-    .to([contentText, contentStack], { x: contentText.innerWidth() + 10 }, 0)
-    .to([contactContainer,contentTitle], {opacity: 0}, 0)
-    .to(homeSection, {
-      background:
-        'linear-gradient(90deg, hsl(0deg, 0%, 90%) 62%, hsl(0deg, 0%, 30%) 62%)',
-    })
+  gsap.to(arrow, {
+    duration: 1,
+    y: 20,
+    repeat: -1,
+    yoyo: true
+  })
 }
