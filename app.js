@@ -1,16 +1,14 @@
-import Navbar from './js/navbar.js';
+import Navbar from './js/navbar_animation.js';
 import HomeAnimation from './js/home_animation.js';
 import ExperienceAnimation from './js/experience_animation.js';
-import SmoothScroll from './js/smooth_scroll.js'
+import SmoothScroll from './js/smooth_scroll.js';
 
 /**
- * The animation is being setup for large screens. 
- * For laptop and down, is in progress still.
+ * The animation is being setup accordind to
+ * the styles are beeing added for each breakpoint.
  */
-if (window.matchMedia('(max-width: 1300px)').matches) {
-  SmoothScroll();
-} else {
-  Navbar();
-  HomeAnimation();
-  ExperienceAnimation();
-}
+
+SmoothScroll();
+Navbar();
+HomeAnimation();
+ExperienceAnimation();

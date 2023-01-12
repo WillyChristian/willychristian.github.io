@@ -19,6 +19,7 @@ header {
         color: $pureWhite;
         padding: 1.2rem;
         margin-top: 2rem;
+        box-shadow: $shadowMedium;
 
         &::after {
           right: calc(50%);
@@ -36,6 +37,7 @@ header {
       padding: 1rem;
       position: relative;
       height: 100vh;
+      box-shadow: $shadowMedium;
 
       @include breakpoint($tablet) {
         width: calc((100vw - $tabletContent) / 2);

@@ -9,12 +9,12 @@
 }
 @media (min-width: 992px) {
   .section__home {
-    background: linear-gradient(90deg, hsl(0deg, 0%, 30%) 36%, hsl(0deg, 0%, 90%) 36%);
+    background: linear-gradient(90deg, hsl(0deg, 0%, 30%) 36%, hsl(0deg, 0%, 98%) 36%);
   }
 }
 @media (min-width: 1349px) {
   .section__home {
-    background: linear-gradient(90deg, hsl(0deg, 0%, 30%) 35%, hsl(0deg, 0%, 90%) 35%);
+    background: linear-gradient(90deg, hsl(0deg, 0%, 30%) 35%, hsl(0deg, 0%, 98%) 35%);
   }
 }
 .section__home .home__title {
@@ -198,10 +198,10 @@
   }
 }
 .section__about .about__content-title h3 {
-  color: hsl(0deg, 0%, 90%);
+  color: hsl(0deg, 0%, 98%);
 }
 .section__about .about__content-text {
-  background-color: hsl(0deg, 0%, 90%);
+  background-color: hsl(0deg, 0%, 98%);
   grid-row: 1/spam;
 }
 @media (min-width: 992px) {
@@ -252,7 +252,7 @@
   }
 }
 .section__contact .contact__title {
-  color: hsl(0deg, 0%, 90%);
+  color: hsl(0deg, 0%, 98%);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -268,7 +268,7 @@
   position: absolute;
   width: 7rem;
   height: 2px;
-  background-color: hsl(0deg, 0%, 90%);
+  background-color: hsl(0deg, 0%, 98%);
   bottom: 1rem;
   right: -70%;
   rotate: 90deg;
@@ -298,7 +298,7 @@
 }
 .section__contact .contact__links li a {
   align-items: center;
-  color: hsl(0deg, 0%, 90%);
+  color: hsl(0deg, 0%, 98%);
   display: flex;
   flex-direction: row-reverse;
   font-weight: bold;
@@ -315,7 +315,7 @@
 }
 
 .section__experience {
-  background: linear-gradient(90deg, hsl(0deg, 0%, 90%) 62%, hsl(0deg, 0%, 30%) 62%);
+  background: linear-gradient(90deg, hsl(0deg, 0%, 98%) 62%, hsl(0deg, 0%, 30%) 62%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -411,7 +411,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  background-color: hsl(0deg, 0%, 90%);
+  background-color: hsl(0deg, 0%, 98%);
   color: hsl(0deg, 0%, 30%);
   position: relative;
 }
@@ -589,6 +589,7 @@ header .navbar__toggle i {
   color: hsl(0deg, 0%, 100%);
   padding: 1.2rem;
   margin-top: 2rem;
+  box-shadow: 0px 10px 10px 0px hsl(0deg, 0%, 45%);
 }
 header .navbar__toggle i::after {
   right: 50%;
@@ -606,6 +607,7 @@ header .navbar__container {
   padding: 1rem;
   position: relative;
   height: 100vh;
+  box-shadow: 0px 10px 10px 0px hsl(0deg, 0%, 45%);
 }
 @media (min-width: 768px) {
   header .navbar__container {
@@ -656,11 +658,11 @@ footer {
   width: 100%;
 }
 footer p {
-  color: hsl(0deg, 0%, 90%);
+  color: hsl(0deg, 0%, 98%);
 }
 footer p a {
   text-decoration: none;
-  color: hsl(0deg, 0%, 90%);
+  color: hsl(0deg, 0%, 98%);
 }
 footer p a:hover {
   color: hsl(238deg, 85%, 65%);
@@ -740,7 +742,7 @@ footer p a:hover {
   width: max-content;
 }
 .experience__content--items .card__container .card p {
-  color: hsl(0deg, 0%, 90%);
+  color: hsl(0deg, 0%, 98%);
 }
 @media (min-width: 992px) {
   .experience__content--items .card__container .card p {
@@ -771,7 +773,7 @@ footer p a:hover {
 }
 
 body {
-  background-color: hsl(0deg, 0%, 90%);
+  background-color: hsl(0deg, 0%, 98%);
   color: hsl(0deg, 0%, 20%);
   font-size: 16px;
   line-height: 1.2;
