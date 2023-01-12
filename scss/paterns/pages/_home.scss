@@ -55,23 +55,28 @@
       @include breakpoint($laptop) {
         grid-template-columns: repeat(12, 1fr);
         column-gap: 30px;
+        row-gap: 15px;
+        grid-template-rows: repeat(6, 55px);
         width: $laptopContent;
       }
       @include breakpoint($wide) {
-        column-gap: 30px;
+        grid-template-rows: repeat(12, 35px);
         width: $wideContent;
       }
 
       &-image {
-        grid-column: 1/4;
-        grid-row: 1 / spam;
+        background-image: url('../../../assets/img/home/bg-home-portrait-pexels.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
         position: relative;
 
-        > img {
-          @include breakpoint($laptop) {
-            height: 398px;
-            width: 318px;
-          }
+        @include breakpoint($laptop) {
+          grid-column: 1/6;
+          grid-row: 1/7;
+        }
+        @include breakpoint($wide) {
+          grid-column: 1/6;
+          grid-row: 1/13;
         }
       }
 
@@ -87,6 +92,21 @@
           p {
             @include breakpoint($laptop) {
               margin-bottom: 0.5rem;
+            }
+          }
+        }
+        .wrapper-stack {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          padding: 1.2rem;
+
+          p {
+            @include breakpoint($laptop) {
+              margin-bottom: 1rem;
+            }
+            @include breakpoint($wide) {
+              margin-bottom: 1.2rem;
             }
           }
         }

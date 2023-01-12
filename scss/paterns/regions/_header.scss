@@ -1,62 +1,62 @@
 @use '../../globals' as *;
 
 header {
-  isolation: isolate;
+  @include flex-box('flex-end', 'flex-start');
+  pointer-events: none;
   position: fixed;
   width: 100%;
   z-index: 1;
-  @include flex-box('center', 'center');
 
   .navbar {
-    @include flex-box('space-between', 'center');
-    padding: 1rem;
-    @include breakpoint($wide) {
-      width: $wideContent;
-    }
-    &__avatar {
-      display: none;
-    }
-    &__contact {
-      @include flex-box('space-between', 'center');
+    &__toggle {
+      aspect-ratio: 1;
+      border-radius: 50%;
+      pointer-events: all;
+      transform: translateX(1rem);
+      z-index: 3;
+      
+      i {
+        background-color: $blue400;
+        border-radius: 50%;
+        box-shadow: $shadowMedium;
+        color: $pureWhite;
+        margin-top: 2rem;
+        padding: 1.2rem;
+
+        &::after {
+          right: calc(50%);
+          top: calc(50% - 4px)
+        }
+        &::before {
+          right: calc(50% - 6px);
+          top: calc(50% - 4px)
+        }
+      }
+    } 
+    &__container {
+      @include flex-box('flex-end', 'center');
       background-color: $pureWhite;
-      border-radius: 1rem;
+      box-shadow: $shadowMedium;
+      height: 100vh;
+      padding: 1rem;
+      pointer-events: all;
       position: relative;
 
-      &--icon {
-        padding: .5rem;
-        img {
-          aspect-ratio: 1;
-          height: 2.5rem;
-        }
-        &.mail {
-          pointer-events: none;
-        }
+      @include breakpoint($tablet) {
+        width: calc((100vw - $tabletContent) / 2);
       }
-      
-      &::before,
-      &::after {
-        background-color: $pureWhite;
-        bottom: 47%;
-        position: absolute;
+      @include breakpoint($laptop) {
+        width: calc((100vw - $laptopContent) / 2);
       }
-
-      &::before {
-        @include breakpoint($wide) {
-          @include pseudoLine(20rem, 2px);
-          left: -20rem;
-        }
-      }
-      &::after {
-        @include breakpoint($wide) {
-          @include pseudoLine(11rem, 2px);
-          right: -11rem;
-        }
+      @include breakpoint($wide) {
+        width: calc((100vw - $wideContent) / 2);
       }
     }
-    &__list {
-      // Needs Work: Navbar should be visible when in mobile, only. For desktop only scroll
-      display: none;
-      // @include flex-box('flex-end', 'center');
+    &__items {
+      @include breakpoint($laptop) {
+      width: max-content;
+      }
+
       li {
         list-style: none;
         padding: 1rem;
