@@ -73,7 +73,7 @@
   }
 }
 .section__home .home__content-image {
-  background-image: url("../../../assets/img/home/bg-home-portrait-pexels__reduce.jpg");
+  background-image: url("../../../assets/img/home/bg-home-portrait-pexels.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -570,79 +570,66 @@
 }
 
 header {
-  isolation: isolate;
   position: fixed;
   width: 100%;
   z-index: 1;
-  align-items: center;
+  align-items: flex-start;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
-header .navbar {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-}
-@media (min-width: 1349px) {
-  header .navbar {
-    width: 1170px;
-  }
-}
-header .navbar__avatar {
-  display: none;
-}
-header .navbar__contact {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  background-color: hsl(0deg, 0%, 100%);
-  border-radius: 1rem;
-  position: relative;
-}
-header .navbar__contact--icon {
-  padding: 0.5rem;
-}
-header .navbar__contact--icon img {
+header .navbar__toggle {
+  border-radius: 50%;
+  transform: translateX(1rem);
   aspect-ratio: 1;
-  height: 2.5rem;
+  z-index: 3;
 }
-header .navbar__contact--icon.mail {
-  pointer-events: none;
+header .navbar__toggle i {
+  background-color: hsl(192deg, 100%, 40%);
+  border-radius: 50%;
+  color: hsl(0deg, 0%, 100%);
+  padding: 1.2rem;
+  margin-top: 2rem;
 }
-header .navbar__contact::before, header .navbar__contact::after {
+header .navbar__toggle i::after {
+  right: 50%;
+  top: calc(50% - 4px);
+}
+header .navbar__toggle i::before {
+  right: calc(50% - 6px);
+  top: calc(50% - 4px);
+}
+header .navbar__container {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
   background-color: hsl(0deg, 0%, 100%);
-  bottom: 47%;
-  position: absolute;
+  padding: 1rem;
+  position: relative;
+  height: 100vh;
 }
-@media (min-width: 1349px) {
-  header .navbar__contact::before {
-    content: "";
-    border-radius: 4px;
-    position: absolute;
-    width: 20rem;
-    height: 2px;
-    left: -20rem;
+@media (min-width: 768px) {
+  header .navbar__container {
+    width: calc((100vw - 648px) / 2);
+  }
+}
+@media (min-width: 992px) {
+  header .navbar__container {
+    width: calc((100vw - 932px) / 2);
   }
 }
 @media (min-width: 1349px) {
-  header .navbar__contact::after {
-    content: "";
-    border-radius: 4px;
-    position: absolute;
-    width: 11rem;
-    height: 2px;
-    right: -11rem;
+  header .navbar__container {
+    width: calc((100vw - 1170px) / 2);
   }
 }
-header .navbar__list {
-  display: none;
+header .navbar__items {
+  width: max-content;
 }
-header .navbar__list li {
+header .navbar__items li {
   list-style: none;
   padding: 1rem;
 }
-header .navbar__list li a {
+header .navbar__items li a {
   color: hsl(0deg, 0%, 20%);
   text-decoration: none;
 }
