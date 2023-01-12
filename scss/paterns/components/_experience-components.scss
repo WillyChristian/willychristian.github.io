@@ -2,21 +2,29 @@
 
 .experience__content--items {
   display: grid;
-  margin-bottom: 1rem;
   padding: 0.5rem 0;
-
+  
   @include breakpoint($laptop) {
     column-gap: 30px;
     grid-template-columns: repeat(12, 1fr);
+    margin-bottom: 0;
+    width: $laptopContent;
   }
   @include breakpoint($wide) {
+    margin-bottom: 1rem;
+    width: $wideContent;
   }
 
   .description {
+    background-color: $white;
     box-shadow: $shadowSmall;
     grid-column: 1/9;
     padding: 1rem;
     text-align: end;
+
+    @include breakpoint($laptop) {
+      padding-left: 0;
+    }
 
     @include breakpoint($wide) {
       max-width: 50rem;
@@ -24,10 +32,18 @@
 
     &__title {
       color: $black200;
+      @include breakpoint($laptop) {
+        font-size: 1.1rem;
+      }
     }
     &__period {
       color: $black400;
-      transform: scale(0.3);
+      @include breakpoint($laptop) {
+        font-size: 0.7rem;
+      }
+      @include breakpoint($wide) {
+        font-size: 0.85rem;
+      }
     }
     &__skills {
       ul {

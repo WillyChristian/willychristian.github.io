@@ -4,23 +4,31 @@ const arrContentItems = document.querySelectorAll(
 const experienceLineLeft = document.querySelector('.title-decoration__left');
 const experienceLineRight = document.querySelector('.title-decoration__right');
 const experienceContainer = document.querySelector('#experience');
-const sectionsWrapper = document.querySelector('.section__container');
+const experienceTitle = document.querySelector('.experience__title--title')
 
 export default function ExperienceAnimation() {
-  const linesAnimation = gsap.timeline({
+
+  gsap.to(experienceLineRight, {
     scrollTrigger: {
-      id: 'left-line',
-      pin: sectionsWrapper,
-      pinnedContainer: sectionsWrapper,
+      id: 'LL',
       trigger: experienceContainer,
-      start: 'top top',
+      start: 'top bottom',
+      end: 'top top',
       scrub: 1,
     },
+    width: 0
   });
 
-  linesAnimation
-    .to(experienceLineRight, { width: 0 })
-    .from(experienceLineLeft, { width: 0 });
+  gsap.from(experienceLineLeft, {
+    scrollTrigger: {
+      id: 'RL',
+      trigger: experienceTitle,
+      start: 'center center',
+      end: 'center center',
+      scrub: 1,
+    },
+    width: 0
+  });
 
   arrContentItems.forEach(containerItem => {
     const bullet = containerItem.querySelector('.bullet');
@@ -30,9 +38,8 @@ export default function ExperienceAnimation() {
     gsap.from([bullet, card, description], {
       scrollTrigger: {
         id: 'content',
-        pinnedContainer: sectionsWrapper,
         trigger: containerItem,
-        start: 'bottom bottom',
+        start: 'top bottom',
         end: '+=200',
         scrub: 1,
       },
