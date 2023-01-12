@@ -21,7 +21,6 @@
     }
     @include breakpoint($wide) {
       column-gap: 1rem;
-      grid-template-rows: auto auto;
       overflow: initial;
       width: $wideContent;
     }
@@ -40,10 +39,7 @@
         width: 100%;
       }
       @include breakpoint($wide){
-        background-position: 1rem;
-        padding: 12rem;
-        top: -5rem;
-        width: 100%;
+        left: 0rem;
       }
     }
     &-title {
@@ -60,8 +56,6 @@
       }
 
       @include breakpoint($wide) {
-        font-size: 4rem;
-        grid-column: 1/8;
         height: 11rem;
         padding: 1rem 0 1rem 1rem;
       }
@@ -76,9 +70,6 @@
 
       @include breakpoint($laptop) {
         grid-column: 6/spam;
-      }
-      @include breakpoint($wide) {
-        grid-column: 8/spam;
       }
       
       p {
