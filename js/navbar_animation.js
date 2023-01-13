@@ -1,8 +1,7 @@
-/**
- * Handle click event
- */
-export default function Navbar() {
+let screenWidth = window.innerWidth;
+let contentSize = $('.home__content').width();
 
+export default function Navbar() {
   /**
    * Handle close the menu when a link is clicked
    */
@@ -16,8 +15,6 @@ export default function Navbar() {
    * Handle the toggle function for the navbar button
    */
   $('.navbar__toggle i').on('click', function () {
-    const screenWidth = window.innerWidth;
-    const contentSize = $('.home__content').width();
     const menu = $(this).parent().next('nav');
     const timelineOpen = gsap.timeline({});
     const timelineClose = gsap.timeline({});
@@ -51,3 +48,12 @@ export default function Navbar() {
     }
   });
 }
+
+/**
+ * Helper function that update the content values according to
+ * screen resize.
+ */
+$(window).on('resize', function() {
+  screenWidth = window.innerWidth;
+  contentSize = $('.home__content').width();
+})
