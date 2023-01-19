@@ -5,10 +5,10 @@
     aspect-ratio: 1;
     border-radius: 50%;
     box-shadow: $shadowMedium;
+    left: -3rem;
     pointer-events: all;
     position: absolute;
     top: 2rem;
-    left: -3rem;
 
     i {
       background-color: $orange400;
@@ -23,14 +23,14 @@
 
       &::after {
         right: calc(50%);
-        top: calc(50% - 4px)
+        top: calc(50% - 4px);
       }
       &::before {
         right: calc(50% - 6px);
-        top: calc(50% - 4px)
+        top: calc(50% - 4px);
       }
     }
-  } 
+  }
   &__container {
     @include flex-box('flex-start', 'center');
     background-color: $blue600;
@@ -61,7 +61,7 @@
         &:hover {
           background-color: $blue400;
           width: 100%;
-          
+
           a {
             color: $white;
           }
@@ -69,8 +69,8 @@
       }
 
       a {
-        text-decoration: none;
         color: $pureWhite;
+        text-decoration: none;
         @include breakpoint($laptop) {
           color: $black300;
         }

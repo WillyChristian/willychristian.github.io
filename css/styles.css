@@ -564,8 +564,8 @@ header {
   justify-content: flex-start;
   height: 100%;
   position: fixed;
-  z-index: 10;
   right: -9rem;
+  z-index: 10;
 }
 @media (min-width: 768px) {
   header {
@@ -734,10 +734,10 @@ footer p a:hover {
   aspect-ratio: 1;
   border-radius: 50%;
   box-shadow: 0px 10px 10px 0px hsl(0deg, 0%, 45%);
+  left: -3rem;
   pointer-events: all;
   position: absolute;
   top: 2rem;
-  left: -3rem;
 }
 .navbar__toggle i {
   background-color: hsl(10deg, 85%, 45%);
@@ -804,8 +804,8 @@ footer p a:hover {
   }
 }
 .navbar__items li a {
-  text-decoration: none;
   color: hsl(0deg, 0%, 100%);
+  text-decoration: none;
 }
 @media (min-width: 992px) {
   .navbar__items li a {
