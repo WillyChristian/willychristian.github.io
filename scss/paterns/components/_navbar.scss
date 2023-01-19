@@ -1,0 +1,80 @@
+@use '../../globals' as *;
+
+.navbar {
+  &__toggle {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow: $shadowMedium;
+    pointer-events: all;
+    position: absolute;
+    top: 2rem;
+    left: -3rem;
+
+    i {
+      background-color: $orange400;
+      border-radius: 50%;
+      color: $pureWhite;
+      padding: 1.2rem;
+      rotate: 180deg;
+
+      @include breakpoint($laptop) {
+        background-color: $blue400;
+      }
+
+      &::after {
+        right: calc(50%);
+        top: calc(50% - 4px)
+      }
+      &::before {
+        right: calc(50% - 6px);
+        top: calc(50% - 4px)
+      }
+    }
+  } 
+  &__container {
+    @include flex-box('flex-start', 'center');
+    background-color: $blue600;
+    box-shadow: $shadowMedium;
+    height: 100vh;
+    pointer-events: all;
+    width: 10rem;
+
+    @include breakpoint($tablet) {
+      width: 12rem;
+    }
+    @include breakpoint($laptop) {
+      background-color: $white;
+    }
+  }
+  &__items {
+    @include flex-box(center, center);
+    flex-direction: column;
+    padding: 1rem 0;
+    width: 100%;
+
+    li {
+      @include flex-box(center, center);
+      list-style: none;
+      padding: 1.25rem 0;
+
+      @include breakpoint($laptop) {
+        &:hover {
+          background-color: $blue400;
+          width: 100%;
+          
+          a {
+            color: $white;
+          }
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: $pureWhite;
+        @include breakpoint($laptop) {
+          color: $black300;
+        }
+      }
+    }
+  }
+}

@@ -1,59 +1,38 @@
-let screenWidth = window.innerWidth;
-let contentSize = $('.home__content').width();
+function closeMenu(menu, button, device) {
+  const timelineClose = gsap.timeline({});
 
+  timelineClose
+    .to(menu, { x: 0 })
+    .to($(button).parent(), { x: 0 }, 0)
+    .to(button, { rotate: 180 }, 0);
+}
+
+function openMenu(menu, button) {
+  const timelineOpen = gsap.timeline({});
+
+  timelineOpen
+    .to(menu, { x: `-${$(menu).outerWidth()}` })
+    .to($(button).parent(), { x: 24 }, 0)
+    .to($(button), { rotate: 0 }, 0);
+}
+
+/**
+ * Toggle menu
+ */
 export default function Navbar() {
-  /**
-   * Handle close the menu when a link is clicked
-   */
-  $('.navbar__container a').each(function() {
-    $(this).click(function() {
-      $('.navbar__toggle i').trigger('click');
-    });
-  });
-
-  /**
-   * Handle the toggle function for the navbar button
-   */
   $('.navbar__toggle i').on('click', function () {
-    const menu = $(this).parent().next('nav');
-    const timelineOpen = gsap.timeline({});
-    const timelineClose = gsap.timeline({});
+    const menu = $(this).closest('header');
 
-    if ($(menu).hasClass('open')) {
-      $(menu).removeClass('open');
-      timelineOpen
-        .to(menu, { duration: 0.4, x: (screenWidth - contentSize) / 2 })
-        .to(
-          $(this),
-          {
-            duration: 0.4,
-            x: (screenWidth - contentSize - 40) / 2,
-            rotate: 180,
-            boxShadow: '0px -10px 10px 0px hsl(0,0%,45%)'
-          },
-          0
-        );
-    } else {
-      $(menu).addClass('open');
-      timelineClose.to(menu, { duration: 0.4, x: 0 }).to(
-        $(this),
-        {
-          duration: 0.4,
-          x: 0,
-          rotate: 0,
-          boxShadow: '0px 10px 10px 0px hsl(0,0%,45%)'
-        },
-        0
-      );
-    }
+    !$(menu).hasClass('opened') ? openMenu(menu, this) : closeMenu(menu, this);
+    $(menu).toggleClass('opened');
   });
 }
 
 /**
- * Helper function that update the content values according to
- * screen resize.
+ * Helper function to close the menu when a link is clicked
  */
-$(window).on('resize', function() {
-  screenWidth = window.innerWidth;
-  contentSize = $('.home__content').width();
-})
+$('.navbar__container a').each(function () {
+  $(this).click(function () {
+    $('.navbar__toggle i').trigger('click');
+  });
+});
