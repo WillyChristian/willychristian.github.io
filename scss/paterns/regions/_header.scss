@@ -1,70 +1,13 @@
 @use '../../globals' as *;
 
 header {
-  @include flex-box('flex-end', 'flex-start');
-  pointer-events: none;
+  @include flex-box(flex-start, flex-start);
+  height: 100%;
   position: fixed;
-  width: 100%;
-  z-index: 1;
-
-  .navbar {
-    &__toggle {
-      aspect-ratio: 1;
-      border-radius: 50%;
-      pointer-events: all;
-      transform: translateX(1rem);
-      z-index: 3;
-      
-      i {
-        background-color: $blue400;
-        border-radius: 50%;
-        box-shadow: $shadowMedium;
-        color: $pureWhite;
-        margin-top: 2rem;
-        padding: 1.2rem;
-
-        &::after {
-          right: calc(50%);
-          top: calc(50% - 4px)
-        }
-        &::before {
-          right: calc(50% - 6px);
-          top: calc(50% - 4px)
-        }
-      }
-    } 
-    &__container {
-      @include flex-box('flex-end', 'center');
-      background-color: $pureWhite;
-      box-shadow: $shadowMedium;
-      height: 100vh;
-      padding: 1rem;
-      pointer-events: all;
-      position: relative;
-
-      @include breakpoint($tablet) {
-        width: calc((100vw - $tabletContent) / 2);
-      }
-      @include breakpoint($laptop) {
-        width: calc((100vw - $laptopContent) / 2);
-      }
-      @include breakpoint($wide) {
-        width: calc((100vw - $wideContent) / 2);
-      }
-    }
-    &__items {
-      @include breakpoint($laptop) {
-      width: max-content;
-      }
-
-      li {
-        list-style: none;
-        padding: 1rem;
-        a {
-          color: $black200;
-          text-decoration: none;
-        }
-      }
-    }
+  right: -9rem;
+  z-index: 10;
+  
+  @include breakpoint($tablet) {
+    right: -12rem;
   }
 }
