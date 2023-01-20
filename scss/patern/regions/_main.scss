@@ -1,20 +1,34 @@
 @use '../../globals' as *;
 main {
   .section__container {
+    & > * {
+      margin: 1.25rem 0;
+    }
+    section:first-of-type {
+      margin-top: 0;
+    }
+
+    & section:last-child {
+      margin-bottom: 0;
+    }
+
     .section {
       &__home,
       &__experience,
       &__projects {
-        height: 100vh;
-        width: 98.9vw;
+        @include breakpoint($laptop) {
+          height: 100vh;
+        }
       }
       &__about{
-        height: 70vh;
-        width: 98.9vw;
+        @include breakpoint($laptop) {
+          height: 70vh;
+        }
       }
       &__contact {
-        height: 40vh;
-        width: 98.9vw;
+        @include breakpoint($laptop) {
+          height: 40vh;
+        }
       }
     }
   }
