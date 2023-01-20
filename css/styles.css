@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@400;700&display=swap");
 .section__home {
   align-items: center;
+  background: linear-gradient(180deg, hsl(0deg, 0%, 30%) 36%, hsl(0deg, 0%, 98%) 36%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -397,21 +398,35 @@
 }
 
 .section__projects {
-  align-items: center;
-  display: flex;
-  justify-content: center;
   background-color: hsl(0deg, 0%, 98%);
   color: hsl(0deg, 0%, 30%);
   position: relative;
 }
+@media (min-width: 992px) {
+  .section__projects {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+}
 .section__projects .projects__title {
   font-size: 2rem;
-  position: absolute;
+  padding: 1.25rem;
   top: 6rem;
+}
+@media (min-width: 768px) {
+  .section__projects .projects__title {
+    margin: 2rem auto;
+    padding: unset;
+    width: 648px;
+  }
 }
 @media (min-width: 992px) {
   .section__projects .projects__title {
     left: calc((100vw - 932px) / 2);
+    margin: unset;
+    position: absolute;
+    width: unset;
   }
 }
 @media (min-width: 1349px) {
@@ -419,24 +434,36 @@
     left: calc((100vw - 1170px) / 2);
   }
 }
-.section__projects .projects__title::after {
-  content: "";
-  border-radius: 8px;
-  position: absolute;
-  width: 25rem;
-  height: 4px;
-  background-color: hsl(0deg, 0%, 30%);
-  left: -25.2rem;
-  position: inherit;
-  top: calc(50% - 2px);
+@media (min-width: 768px) {
+  .section__projects .projects__title::after {
+    content: "";
+    border-radius: 8px;
+    position: absolute;
+    width: 7rem;
+    height: 4px;
+    background-color: hsl(0deg, 0%, 30%);
+    left: -3.5rem;
+    position: absolute;
+    top: calc(1.35rem - 2px);
+  }
 }
-.section__projects .projects__content {
-  column-gap: 30px;
-  display: grid;
-  row-gap: 15px;
+@media (min-width: 992px) {
+  .section__projects .projects__title::after {
+    content: "";
+    border-radius: 8px;
+    position: absolute;
+    width: 25rem;
+    height: 4px;
+    left: -25.2rem;
+    position: inherit;
+    top: calc(50% - 2px);
+  }
 }
 @media (min-width: 992px) {
   .section__projects .projects__content {
+    column-gap: 30px;
+    display: grid;
+    row-gap: 15px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(6, 30px);
     transform: translateY(-3rem);
@@ -447,114 +474,6 @@
   .section__projects .projects__content {
     grid-template-rows: repeat(12, 30px);
     width: 1170px;
-  }
-}
-.section__projects .projects__content-banner {
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-.section__projects .projects__content-banner .description__container {
-  position: absolute;
-}
-@media (min-width: 992px) {
-  .section__projects .projects__content-banner .description__container {
-    top: 13rem;
-  }
-}
-@media (min-width: 1349px) {
-  .section__projects .projects__content-banner .description__container {
-    top: 25rem;
-  }
-}
-.section__projects .projects__content-banner .description__container-title {
-  margin-bottom: 0.4rem;
-}
-@media (min-width: 992px) {
-  .section__projects .projects__content-banner .description__container-text {
-    font-size: 0.8rem;
-  }
-}
-@media (min-width: 1349px) {
-  .section__projects .projects__content-banner .description__container-text {
-    font-size: unset;
-  }
-}
-.section__projects .projects__content-banner .description__container-link {
-  color: hsl(0deg, 0%, 30%);
-  display: flex;
-  margin: 1rem 0 1rem;
-  text-decoration: none;
-  transition: 200ms ease color;
-}
-.section__projects .projects__content-banner .description__container-link:hover {
-  color: hsl(192deg, 100%, 40%);
-}
-.section__projects .projects__content-banner .description__container-link i {
-  color: hsl(192deg, 100%, 40%);
-  margin-left: 0.5rem;
-}
-.section__projects .projects__content-banner::after {
-  content: "";
-  border-radius: 10px;
-  position: absolute;
-  width: 4rem;
-  height: 5px;
-  background-color: hsl(0deg, 0%, 30%);
-  bottom: -1rem;
-  left: calc(50% - 2rem);
-  rotate: 90deg;
-}
-.section__projects .projects__content-banner::before {
-  background-color: hsl(0deg, 0%, 30%);
-  content: "";
-  inset: 0;
-  opacity: 0.4;
-  position: absolute;
-}
-.section__projects .projects__content .financial {
-  background-image: url("../../../assets/img/projects/financial-pexels-pixabay.jpg");
-  grid-column: 1/5;
-}
-@media (min-width: 992px) {
-  .section__projects .projects__content .financial {
-    grid-row: 1/5;
-  }
-}
-@media (min-width: 1349px) {
-  .section__projects .projects__content .financial {
-    grid-row: 1/9;
-  }
-}
-.section__projects .projects__content .pcaas {
-  background-image: url("../../../assets/img/projects/pcass-cottonbro-studio.jpg");
-  grid-column: 5/9;
-}
-@media (min-width: 992px) {
-  .section__projects .projects__content .pcaas {
-    background-position: 0 -10rem;
-    grid-row: 2/6;
-  }
-}
-@media (min-width: 1349px) {
-  .section__projects .projects__content .pcaas {
-    background-position: unset;
-    grid-row: 2/10;
-  }
-}
-.section__projects .projects__content .sales {
-  background-image: url("../../../assets/img/projects/repair-pexels-tima-miroshnichenko.jpg");
-  background-position: 0;
-  grid-column: 9/13;
-}
-@media (min-width: 992px) {
-  .section__projects .projects__content .sales {
-    grid-row: 3/7;
-  }
-}
-@media (min-width: 1349px) {
-  .section__projects .projects__content .sales {
-    grid-row: 3/11;
   }
 }
 
@@ -573,17 +492,29 @@ header {
   }
 }
 
-main .section__container .section__home, main .section__container .section__experience, main .section__container .section__projects {
-  height: 100vh;
-  width: 98.9vw;
+main .section__container > * {
+  margin: 1.25rem 0;
 }
-main .section__container .section__about {
-  height: 70vh;
-  width: 98.9vw;
+main .section__container section:first-of-type {
+  margin-top: 0;
 }
-main .section__container .section__contact {
-  height: 40vh;
-  width: 98.9vw;
+main .section__container section:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 992px) {
+  main .section__container .section__home, main .section__container .section__experience, main .section__container .section__projects {
+    height: 100vh;
+  }
+}
+@media (min-width: 992px) {
+  main .section__container .section__about {
+    height: 70vh;
+  }
+}
+@media (min-width: 992px) {
+  main .section__container .section__contact {
+    height: 40vh;
+  }
 }
 
 footer {
@@ -810,6 +741,149 @@ footer p a:hover {
 @media (min-width: 992px) {
   .navbar__items li a {
     color: hsl(0deg, 0%, 30%);
+  }
+}
+
+.wrapper .projects__content-banner {
+  aspect-ratio: 16/9;
+  margin: 0 auto 1rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .wrapper .projects__content-banner {
+    box-shadow: 0px 10px 10px 0px hsl(0deg, 0%, 45%);
+    width: 32.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .wrapper .projects__content-banner.pcaas {
+    background-position: 0 -10rem;
+  }
+}
+.wrapper .description__container {
+  margin: 2rem auto;
+  padding: 1.25rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .wrapper .description__container {
+    width: 648px;
+  }
+}
+.wrapper .description__container a {
+  color: hsl(0deg, 0%, 30%);
+  display: flex;
+  margin: 1rem 0 1rem;
+}
+
+.projects__content-banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+@media (min-width: 992px) {
+  .projects__content-banner::after {
+    content: "";
+    border-radius: 10px;
+    position: absolute;
+    width: 4rem;
+    height: 5px;
+    background-color: hsl(0deg, 0%, 30%);
+    bottom: -1rem;
+    left: calc(50% - 2rem);
+    rotate: 90deg;
+  }
+}
+.projects__content-banner::before {
+  background-color: hsl(0deg, 0%, 30%);
+  content: "";
+  inset: 0;
+  opacity: 0.4;
+  position: absolute;
+}
+.projects__content-banner .description__container {
+  position: absolute;
+}
+@media (min-width: 992px) {
+  .projects__content-banner .description__container {
+    top: 13rem;
+  }
+}
+@media (min-width: 1349px) {
+  .projects__content-banner .description__container {
+    top: 25rem;
+  }
+}
+.projects__content-banner .description__container-title {
+  margin-bottom: 0.4rem;
+}
+@media (min-width: 992px) {
+  .projects__content-banner .description__container-text {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 1349px) {
+  .projects__content-banner .description__container-text {
+    font-size: unset;
+  }
+}
+.projects__content-banner .description__container-link {
+  color: hsl(0deg, 0%, 30%);
+  display: flex;
+  margin: 1rem 0 1rem;
+  text-decoration: none;
+  transition: 200ms ease color;
+}
+.projects__content-banner .description__container-link:hover {
+  color: hsl(192deg, 100%, 40%);
+}
+.projects__content-banner .description__container-link i {
+  color: hsl(192deg, 100%, 40%);
+  margin-left: 0.5rem;
+}
+.projects__content-banner.financial {
+  background-image: url("../../../assets/img/projects/financial-pexels-pixabay.jpg");
+}
+@media (min-width: 992px) {
+  .projects__content-banner.financial {
+    grid-column: 1/5;
+    grid-row: 1/5;
+  }
+}
+@media (min-width: 1349px) {
+  .projects__content-banner.financial {
+    grid-row: 1/9;
+  }
+}
+.projects__content-banner.pcaas {
+  background-image: url("../../../assets/img/projects/pcass-cottonbro-studio.jpg");
+}
+@media (min-width: 992px) {
+  .projects__content-banner.pcaas {
+    background-position: 0 -10rem;
+    grid-column: 5/9;
+    grid-row: 2/6;
+  }
+}
+@media (min-width: 1349px) {
+  .projects__content-banner.pcaas {
+    background-position: unset;
+    grid-row: 2/10;
+  }
+}
+.projects__content-banner.sales {
+  background-image: url("../../../assets/img/projects/repair-pexels-tima-miroshnichenko.jpg");
+  background-position: 0;
+}
+@media (min-width: 992px) {
+  .projects__content-banner.sales {
+    grid-column: 9/13;
+    grid-row: 3/7;
+  }
+}
+@media (min-width: 1349px) {
+  .projects__content-banner.sales {
+    grid-row: 3/11;
   }
 }
 

@@ -1,38 +1,57 @@
 @use '../../globals' as *;
 
 .section__projects {
-  @include flex-box('center', 'center');
   background-color: $white;
   color: $black300;
   position: relative;
+  @include breakpoint($laptop) {
+    @include flex-box('center', 'center');
+  }
 
   .projects {
     &__title {
       font-size: 2rem;
-      position: absolute;
+      padding: 1.25rem;
       top: 6rem;
+
+      @include breakpoint($tablet) {
+        margin: 2rem auto;
+        padding: unset;
+        width: $tabletContent;
+      }
 
       @include breakpoint($laptop) {
         left: calc((100vw - $laptopContent) / 2);
+        margin: unset;
+        position: absolute;
+        width: unset;
       }
       @include breakpoint($wide) {
         left: calc((100vw - $wideContent) / 2);
       }
 
       &::after {
-        @include pseudoLine(25rem, 4px);
-        background-color: $black300;
-        left: -25.2rem;
-        position: inherit;
-        top: calc(50% - 2px);
+        @include breakpoint($tablet) {
+          @include pseudoLine(7rem, 4px);
+          background-color: $black300;
+          left: calc(-7rem / 2);
+          position: absolute;
+          top: calc(1.35rem - 2px);
+        }
+
+        @include breakpoint($laptop) {
+          @include pseudoLine(25rem, 4px);
+          left: -25.2rem;
+          position: inherit;
+          top: calc(50% - 2px);
+        }
       }
     }
     &__content {
-      column-gap: 30px;
-      display: grid;
-      row-gap: 15px;
-      
       @include breakpoint($laptop) {
+        column-gap: 30px;
+        display: grid;
+        row-gap: 15px;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: repeat(6, 30px);
         transform: translateY(-3rem);
@@ -41,103 +60,6 @@
       @include breakpoint($wide) {
         grid-template-rows: repeat(12, 30px);
         width: $wideContent;
-      }
-
-      &-banner {
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-
-        .description__container {
-          position: absolute;
-
-          @include breakpoint($laptop) {
-            top: 13rem;
-          }
-          @include breakpoint($wide) {
-            top: 25rem;
-          }
-
-          &-title {
-            margin-bottom: 0.4rem;
-          }
-          &-text {
-            @include breakpoint($laptop) {
-              font-size: 0.8rem;
-            }
-            @include breakpoint($wide) {
-              font-size: unset;
-            }
-          }
-          &-link {
-            color: $black300;
-            display: flex;
-            margin: 1rem 0 1rem;
-            text-decoration: none;
-            transition: 200ms ease color;
-
-            &:hover {
-              color: $blue400;
-            }
-
-            i {
-              color: $blue400;
-              margin-left: 0.5rem;
-            }
-          }
-        }
-
-        &::after {
-          @include pseudoLine(4rem, 5px);
-          background-color: $black300;
-          bottom: -1rem;
-          left: calc(50% - 2rem);
-          rotate: 90deg;
-        }
-        // Overlay
-        &::before {
-          background-color: $black300;
-          content: '';
-          inset: 0;
-          opacity: 0.4;
-          position: absolute;
-        }
-      }
-      .financial {
-        background-image: url('../../../assets/img/projects/financial-pexels-pixabay.jpg');
-        grid-column: 1/5;
-
-        @include breakpoint($laptop) {
-          grid-row: 1/5;
-        }
-        @include breakpoint($wide) {
-          grid-row: 1/9;
-        }
-      }
-      .pcaas {
-        background-image: url('../../../assets/img/projects/pcass-cottonbro-studio.jpg');
-        grid-column: 5/9;
-
-        @include breakpoint($laptop) {
-          background-position: 0 -10rem; 
-          grid-row: 2/6;
-        }
-        @include breakpoint($wide) {
-          background-position: unset;
-          grid-row: 2/10;
-        }
-      }
-      .sales {
-        background-image: url('../../../assets/img/projects/repair-pexels-tima-miroshnichenko.jpg');
-        background-position: 0;
-        grid-column: 9/13;
-
-        @include breakpoint($laptop) {
-          grid-row: 3/7;
-        }
-        @include breakpoint($wide) {
-          grid-row: 3/11;
-        }
       }
     }
   }
