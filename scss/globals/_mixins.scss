@@ -35,8 +35,13 @@
   }
 }
 
-@mixin breakpointOnly($var) {
+@mixin mobileOnly($var) {
   @media only screen and (max-width: $var) {
+    @content;
+  }
+}
+@mixin tabletOnly($laptop, $mobile) {
+  @media (max-width: $laptop) and (min-width: $mobile) {
     @content;
   }
 }
