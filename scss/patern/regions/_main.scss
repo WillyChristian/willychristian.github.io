@@ -16,17 +16,17 @@ main {
       &__home,
       &__experience,
       &__projects {
-        @include breakpoint($laptop) {
+        @include breakpoint($tablet) {
           height: 100vh;
         }
       }
       &__about{
-        @include breakpoint($laptop) {
+        @include breakpoint($tablet) {
           height: 70vh;
         }
       }
       &__contact {
-        @include breakpoint($laptop) {
+        @include breakpoint($tablet) {
           height: 40vh;
         }
       }
