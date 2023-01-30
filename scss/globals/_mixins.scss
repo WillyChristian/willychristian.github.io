@@ -1,10 +1,3 @@
-/*
-   Once it's using the variables context, pay atention 
-  with the name of the variables to don't override or cause
-  a conclflict.
-*/
-@use './variables' as *;
-
 // Utilities
 @mixin flex-box($justify, $align) {
   align-items: #{$align};
@@ -42,19 +35,13 @@
   }
 }
 
-@mixin mobileOnly {
-  @media only screen and (max-width: $mobile) {
+@mixin mobileOnly($var) {
+  @media only screen and (max-width: $var) {
     @content;
   }
 }
-@mixin tabletOnly {
+@mixin tabletOnly($laptop, $mobile) {
   @media (max-width: $laptop) and (min-width: $mobile) {
-    @content;
-  }
-}
-
-@mixin tabletAndBelow {
-  @media (max-width: $laptop) {
     @content;
   }
 }
