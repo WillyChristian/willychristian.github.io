@@ -2,26 +2,26 @@
 
 .section__about {
   display: flex;
-  justify-content: center;
   height: 100vh;
+  justify-content: center;
 
   @include breakpoint($tablet) {
     height: 70vh;
   }
 
   .about__content {
-    position: relative;
     padding: 1.25rem;
+    position: relative;
 
     @include breakpoint($tablet) {
-      width: $tabletContent;
       padding: unset;
+      width: $tabletContent;
     }
 
     @include breakpoint($laptop) {
-      display: grid;
       align-items: center;
       column-gap: 30px;
+      display: grid;
       grid-template-columns: repeat(12, 1fr);
       overflow: hidden;
       width: $laptopContent;
