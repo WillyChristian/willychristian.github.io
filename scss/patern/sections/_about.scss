@@ -1,80 +1,89 @@
 @use '../../globals' as *;
 
 .section__about {
-  align-items: center;
   display: flex;
   justify-content: center;
+  height: 100vh;
+
+  @include breakpoint($tablet) {
+    height: 70vh;
+  }
 
   .about__content {
-    display: grid;
-    justify-content: center;
     position: relative;
+    padding: 1.25rem;
 
     @include breakpoint($tablet) {
       width: $tabletContent;
+      padding: unset;
     }
+
     @include breakpoint($laptop) {
+      display: grid;
+      align-items: center;
       column-gap: 30px;
       grid-template-columns: repeat(12, 1fr);
       overflow: hidden;
       width: $laptopContent;
     }
-    @include breakpoint($wide) {
+
+    @include breakpoint($commonScreen) {
       column-gap: 1rem;
       overflow: initial;
-      width: $wideContent;
+      width: $commonContent;
     }
 
     &-background {
+      aspect-ratio: 16/9;
       background-image: url('../../../assets/img/about/bg-negative-space.jpg');
       background-repeat: no-repeat;
-      background-size: contain;
-      position: absolute;
+      background-size: cover;
+      display: block;
       z-index: -1;
-
-      @include breakpoint($laptop){
+      
+      @include breakpoint($laptop) {
+        aspect-ratio: unset;
+        background-size: contain;
         left: -2rem;
         padding: 10rem;
-        top: -2rem;
+        position: absolute;
         width: 100%;
       }
-      @include breakpoint($wide){
+
+      @include breakpoint($commonScreen) {
         left: 0rem;
       }
     }
+
     &-title {
-      align-items: flex-start;
-      display: flex;
-      grid-row: 1/spam;
-      justify-content: flex-end;
-      
+      font-size: 2rem;
+      translate: 0 -3rem;
+
       @include breakpoint($laptop) {
+        align-items: flex-start;
+        display: flex;
         font-size: 3rem;
         grid-column: 1/6;
+        grid-row: 1 / spam;
+        height: 11rem;
+        justify-content: flex-end;
+        padding: 1rem 0 1rem 1rem;
+      }
+
+      @include breakpoint($commonScreen) {
         height: 11rem;
         padding: 1rem 0 1rem 1rem;
       }
 
-      @include breakpoint($wide) {
-        height: 11rem;
-        padding: 1rem 0 1rem 1rem;
-      }
-      
       h3 {
-        color: $white;  
+        color: $white;
       }
     }
     &-text {
-      background-color: $white;
-      grid-row: 1/spam;
-
       @include breakpoint($laptop) {
-        grid-column: 6/spam;
-      }
-      
-      p {
-        margin: 0 .3rem;
-        padding: .5rem; 
+        background-color: $white;
+        grid-row: 1 / spam;
+        grid-column: 6 / spam;
       }
     }
   }
