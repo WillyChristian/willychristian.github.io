@@ -6,20 +6,12 @@ $shadowLarge: 0px 10px 15px 5px hsl(0,0%,45%);
 // Breakpoint changes
 $tabletContent: 648px;
 $laptopContent: 932px;
-$commonContent: 1170px;
-$largerContent: 1400px;
-$fullHDContent: 1700px;
+$wideContent: 1170px;
+$ultraWideContent: 1400px;
 
 // Breakpoint values
 $mobile: 420px;
 $tablet: 768px;
 $laptop: 992px;
-$commonScreen: 1366px;
-$largerScreen: 1680px;
-$fullHDScreen: 1920px;
-
-// Scales
-$small: 1.2;
-$medium: 1.4;
-$large: 1.6;
-$huge: 1.8;
+$wide: 1349px;
+$u-wide: 1700px;
