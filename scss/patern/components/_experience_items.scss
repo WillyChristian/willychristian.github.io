@@ -2,67 +2,80 @@
 
 .experience__content--items {
   display: grid;
-  padding: 0.5rem 0;
-  
+  padding: 0 0.625rem;
+  margin-bottom: 1rem;
+
+  @include breakpoint($tablet) {
+    padding: unset;
+  }
+
   @include breakpoint($laptop) {
     column-gap: 30px;
     grid-template-columns: repeat(12, 1fr);
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
     width: $laptopContent;
   }
-  @include breakpoint($wide) {
+
+  @include breakpoint($commonScreen) {
     margin-bottom: 1rem;
-    width: $wideContent;
+    width: $commonContent;
   }
 
   .description {
     background-color: $white;
     box-shadow: $shadowSmall;
     grid-column: 1/9;
-    padding: 1rem;
-    text-align: end;
-
+    padding: 1rem 0.625rem;
+    
     @include breakpoint($laptop) {
+      text-align: end;
       padding-left: 0;
     }
 
-    @include breakpoint($wide) {
+    @include breakpoint($commonScreen) {
       max-width: 50rem;
     }
 
     &__title {
       color: $black200;
+
       @include breakpoint($laptop) {
         font-size: 1.1rem;
       }
     }
     &__period {
       color: $black400;
+
       @include breakpoint($laptop) {
-        font-size: 0.7rem;
-      }
-      @include breakpoint($wide) {
-        font-size: 0.85rem;
+        display: none;
       }
     }
+
     &__skills {
       ul {
         display: flex;
-        justify-content: flex-end;
         list-style: none;
+
+        @include breakpoint($laptop) {
+          justify-content: flex-end;
+        }
+
         li {
           margin: 0.5rem;
           transition: transform 200ms ease;
+
           i {
             @include breakpoint($laptop) {
               font-size: 1.3rem;
             }
-            @include breakpoint($wide) {
+
+            @include breakpoint($commonScreen) {
               font-size: 1.5rem;
             }
           }
+
           &:hover {
-            transform: scale(1.5);
+            scale: $medium;
           }
         }
       }
@@ -71,32 +84,37 @@
       @include breakpoint($laptop) {
         font-size: 0.8rem;
       }
-      @include breakpoint($wide) {
+
+      @include breakpoint($commonScreen) {
         font-size: 1em;
       }
     }
   }
 
   .card__container {
-    align-items: center;
-    display: grid;
-    grid-column: 9 / spam;
-    grid-template-columns: 5rem 1fr;
-    width: 100%;
+    display: none;
+
+    @include breakpoint($laptop) {
+      align-items: center;
+      display: grid;
+      grid-column: 9 / spam;
+      grid-template-columns: 5rem 1fr;
+      width: 100%;
+    }
 
     .card {
       background-color: $black300;
       justify-self: start;
       width: max-content;
-      @include breakpoint($wide) {
-      }
 
       p {
         color: $white;
+
         @include breakpoint($laptop) {
           font-size: 1.3rem;
         }
-        @include breakpoint($wide) {
+
+        @include breakpoint($commonScreen) {
           font-size: 1.5rem;
         }
       }
@@ -112,7 +130,8 @@
       @include breakpoint($laptop) {
         transform: translateX(-1rem);
       }
-      @include breakpoint($wide) {
+      
+      @include breakpoint($commonScreen) {
       }
     }
   }
