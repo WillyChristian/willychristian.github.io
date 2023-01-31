@@ -1,0 +1,68 @@
+@use '../../globals' as *;
+
+.section__experience {
+  background: linear-gradient(
+    90deg,
+    $white 61%,
+    $black300 61%,
+    $black300 62%,
+    $blue500 62%,
+    $blue500 63%,
+    $black300 63%
+  );
+  margin: 0 auto;
+  padding: 1rem 0;
+
+  @include breakpoint($tablet) {
+    background: linear-gradient(
+      90deg,
+      $white 61.5%,
+      $black300 61.5%,
+      $black300 62.2%,
+      $blue500 62.2%,
+      $blue500 62.6%,
+      $black300 62.6%
+    );
+  }
+
+  .experience {
+    &__title {
+      padding: 0 1.25rem;
+
+      &--title {
+        color: $black300;
+        @include breakpoint($tablet) {
+          margin: 0 auto 0.8rem;
+          width: $tabletContent;
+        }
+
+        @include breakpoint($laptop) {
+          color: $pureWhite;
+          font-size: 1.5rem;
+          text-align: end;
+          width: $laptopContent;
+        }
+
+        @include breakpoint($commonScreen) {
+          font-size: 2rem;
+          width: $commonContent;
+        }
+      }
+    }
+    &__content {
+      margin: 0 auto;
+
+      @include breakpoint($tablet) {
+        width: $tabletContent;
+      }
+
+      @include breakpoint($laptop) {
+        width: $laptopContent;
+      }
+
+      @include breakpoint($commonScreen) {
+        width: $commonContent;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@use '../../globals' as *;
+
+header {
+  @include flex-box(flex-start, flex-start);
+  height: 100%;
+  position: fixed;
+  right: -9rem;
+  z-index: 10;
+  
+  @include breakpoint($tablet) {
+    right: -12rem;
+  }
+}

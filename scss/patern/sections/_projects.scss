@@ -1,0 +1,53 @@
+@use '../../globals' as *;
+
+.section__projects {
+  background-color: $white;
+  color: $black300;
+
+  @include breakpoint($laptop) {
+    min-height: 40rem;
+  }
+
+  @include breakpoint($commonScreen) {
+    min-height: 50rem;
+  }
+
+  .projects {
+    &__title {
+      font-size: 2rem;
+      padding: 1.25rem;
+      position: relative;
+
+      @include breakpoint($tablet) {
+        margin-left: auto;
+        margin-right: auto;
+        padding: unset;
+        width: $tabletContent;
+      }
+
+      @include breakpoint($laptop) {
+        width: $laptopContent;
+      }
+
+      @include breakpoint($commonScreen) {
+        width: $commonContent;
+      }
+    }
+
+    &__content {
+      @include breakpoint($laptop) {
+        column-gap: 30px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(6, 30px);
+        margin: 0 auto;
+        row-gap: 15px;
+        width: $laptopContent;
+      }
+      @include breakpoint($commonScreen) {
+        grid-template-rows: repeat(12, 30px);
+        width: $commonContent;
+      }
+    }
+  }
+}

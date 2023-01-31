@@ -1,3 +1,10 @@
+/*
+   Once it's using the variables context, pay atention 
+  with the name of the variables to don't override or cause
+  a conclflict.
+*/
+@use './variables' as *;
+
 // Utilities
 @mixin flex-box($justify, $align) {
   align-items: #{$align};
@@ -21,6 +28,7 @@
   width: $width;
   height: $height;
 }
+
 @mixin spanLine($width, $height) {
   border-radius: calc($height * 2);
   position: absolute;
@@ -31,6 +39,24 @@
 //Breakpoints
 @mixin breakpoint($var) {
   @media (min-width: $var) {
+    @content;
+  }
+}
+
+@mixin mobileOnly {
+  @media only screen and (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tabletOnly {
+  @media (max-width: $laptop) and (min-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tabletAndBelow {
+  @media (max-width: $laptop) {
     @content;
   }
 }

@@ -1,0 +1,21 @@
+@use '../../globals' as *;
+main {
+  .section__container {
+    // Adjust space for the contents on mobile versions
+    & > * {
+      margin-bottom: 3.75rem;
+
+      @include breakpoint($laptop) {
+        margin-bottom: 2.50rem;
+      }
+    }
+
+    & section:last-of-type {
+      margin-bottom: 0;
+
+      @include breakpoint($laptop) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

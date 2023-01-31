@@ -1,15 +1,51 @@
 @use './globals' as *;
-@use './paterns';
+@use './patern';
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body {
-    background-color: $white;
-    color: $black200;
-    font-size: 16px;
-    line-height: 1.2;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  @include font-normal($fontDefault);
+  background-color: $white;
+  color: $black200;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 0.8rem;
+
+  @include breakpoint($laptop) {
+    margin-bottom: 1rem;
+  }
+  
+  @include breakpoint($commonScreen) {
+    margin-bottom: 1.2rem;
+  }
+}
+
+p {
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 0;
+
+  @include breakpoint($laptop) {
+    margin-bottom: 0.8rem;
+    padding: 0.5rem 0;
+  }
+}
+
+a {
+  color: $black300;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 0;
+  text-decoration: none;
+
+  @include breakpoint($laptop) {
+    margin-bottom: 0.8rem;
+    padding: 0.5rem 0;
+  }
 }
