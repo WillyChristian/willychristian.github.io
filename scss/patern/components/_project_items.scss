@@ -5,7 +5,7 @@
     aspect-ratio: 16/9;
     margin: 0 auto 1rem;
     width: 100%;
-    
+
     @include breakpoint($tablet) {
       box-shadow: $shadowMedium;
       width: 32.25rem;
@@ -17,18 +17,22 @@
       }
     }
   }
+
   .description__container {
     margin: 2rem auto;
     padding: 1.25rem;
     width: 100%;
+
     @include breakpoint($tablet) {
       width: $tabletContent;
     }
 
     a {
-      color: $black300;
       display: flex;
-      margin: 1rem 0 1rem;
+
+      i {
+        margin-left: 0.5rem;
+      }
     }
   }
 }
@@ -55,27 +59,32 @@
     opacity: 0.4;
     position: absolute;
   }
+
   .description__container {
     position: absolute;
 
     @include breakpoint($laptop) {
       top: 13rem;
     }
-    @include breakpoint($wide) {
+
+    @include breakpoint($commonScreen) {
       top: 25rem;
     }
 
     &-title {
       margin-bottom: 0.4rem;
     }
+
     &-text {
       @include breakpoint($laptop) {
         font-size: 0.8rem;
       }
-      @include breakpoint($wide) {
+
+      @include breakpoint($commonScreen) {
         font-size: unset;
       }
     }
+
     &-link {
       color: $black300;
       display: flex;
@@ -89,43 +98,48 @@
 
       i {
         color: $blue400;
-        margin-left: 0.5rem;
       }
     }
   }
+
   &.financial {
     background-image: url('../../../assets/img/projects/financial-pexels-pixabay.jpg');
-    
+
     @include breakpoint($laptop) {
       grid-column: 1/5;
       grid-row: 1/5;
     }
-    @include breakpoint($wide) {
+
+    @include breakpoint($commonScreen) {
       grid-row: 1/9;
     }
   }
+
   &.pcaas {
     background-image: url('../../../assets/img/projects/pcass-cottonbro-studio.jpg');
-    
+
     @include breakpoint($laptop) {
       background-position: 0 -10rem;
       grid-column: 5/9;
       grid-row: 2/6;
     }
-    @include breakpoint($wide) {
+
+    @include breakpoint($commonScreen) {
       background-position: unset;
       grid-row: 2/10;
     }
   }
+
   &.sales {
     background-image: url('../../../assets/img/projects/repair-pexels-tima-miroshnichenko.jpg');
     background-position: 0;
-    
+
     @include breakpoint($laptop) {
       grid-column: 9/13;
       grid-row: 3/7;
     }
-    @include breakpoint($wide) {
+
+    @include breakpoint($commonScreen) {
       grid-row: 3/11;
     }
   }

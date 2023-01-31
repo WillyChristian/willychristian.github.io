@@ -3,63 +3,46 @@
 .section__projects {
   background-color: $white;
   color: $black300;
-  position: relative;
+
   @include breakpoint($laptop) {
-    @include flex-box('center', 'center');
+    min-height: 40rem;
   }
 
   .projects {
     &__title {
       font-size: 2rem;
       padding: 1.25rem;
-      top: 6rem;
+      position: relative;
 
       @include breakpoint($tablet) {
-        margin: 2rem auto;
+        margin-left: auto;
+        margin-right: auto;
         padding: unset;
         width: $tabletContent;
       }
 
       @include breakpoint($laptop) {
-        left: calc((100vw - $laptopContent) / 2);
-        margin: unset;
-        position: absolute;
-        width: unset;
-      }
-      @include breakpoint($wide) {
-        left: calc((100vw - $wideContent) / 2);
+        width: $laptopContent;
       }
 
-      &::after {
-        @include breakpoint($tablet) {
-          @include pseudoLine(7rem, 4px);
-          background-color: $black300;
-          left: calc(-7rem / 2);
-          position: absolute;
-          top: calc(1.35rem - 2px);
-        }
-
-        @include breakpoint($laptop) {
-          @include pseudoLine(25rem, 4px);
-          left: -25.2rem;
-          position: inherit;
-          top: calc(50% - 2px);
-        }
+      @include breakpoint($commonScreen) {
+        width: $commonContent;
       }
     }
+
     &__content {
       @include breakpoint($laptop) {
         column-gap: 30px;
         display: grid;
-        row-gap: 15px;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: repeat(6, 30px);
-        transform: translateY(-3rem);
+        margin: 0 auto;
+        row-gap: 15px;
         width: $laptopContent;
       }
-      @include breakpoint($wide) {
+      @include breakpoint($commonScreen) {
         grid-template-rows: repeat(12, 30px);
-        width: $wideContent;
+        width: $commonContent;
       }
     }
   }
