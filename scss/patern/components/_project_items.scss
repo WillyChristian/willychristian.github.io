@@ -25,6 +25,7 @@
 
     @include breakpoint($tablet) {
       width: $tabletContent;
+      padding: unset;
     }
 
     a {
@@ -60,6 +61,11 @@
     position: absolute;
   }
 
+  /*
+     The sentence below is used when the breakpoint is 
+    over than 996px, when a JS changes the description's
+    position.
+  */
   .description__container {
     position: absolute;
 
