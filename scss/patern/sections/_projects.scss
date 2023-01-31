@@ -34,11 +34,11 @@
       @include breakpoint($laptop) {
         column-gap: 30px;
         display: grid;
-        row-gap: 15px;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: repeat(6, 30px);
-        width: $laptopContent;
         margin: 0 auto;
+        row-gap: 15px;
+        width: $laptopContent;
       }
       @include breakpoint($commonScreen) {
         grid-template-rows: repeat(12, 30px);
