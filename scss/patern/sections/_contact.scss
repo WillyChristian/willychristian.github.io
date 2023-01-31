@@ -7,64 +7,101 @@
   background-size: cover;
   display: flex;
   justify-content: center;
+
+  @include breakpoint($tablet) {
+    padding: 4rem 0;
+  }
+
   @include breakpoint($laptop) {
     background-position: 0 -12rem;
   }
-  @include breakpoint($wide) {
+  
+  @include breakpoint($commonScreen) {
     background-position: 0 -15rem;
   }
 
   .contact {
     &__content {
-      display: flex;
       align-items: center;
+      display: flex;
+      padding: 0 1.25rem;
+      width: 100%;
+
+      @include breakpoint($tablet) {
+        width: $tabletContent;
+        padding: unset;
+      }
 
       @include breakpoint($laptop) {
         width: $laptopContent;
       }
-      @include breakpoint($wide) {
-        width: $wideContent;
+
+      @include breakpoint($commonScreen) {
+        width: $commonContent;
       }
     }
+
     &__title {
+      --margin: 2rem;
+
       color: $white;
       display: flex;
       flex-direction: column;
       position: relative;
 
-      @include breakpoint($laptop) {
-        margin-right: 5rem;
-      }
-      @include breakpoint($wide) {
+      @include mobileOnly {
+        display: none;
       }
 
+      @include breakpoint($tablet) {
+        margin-right: var(--margin);
+      }
+
+      @include breakpoint($laptop) {
+        margin-right: calc(var(--margin) * 1.6);
+      }
+      
+      @include breakpoint($commonScreen) {
+        margin-right: calc(var(--margin) * 2);
+      }
+      
       &::before {
         @include pseudoLine(7rem, 2px);
         background-color: $white;
-        bottom: 1rem;
-        right: -70%;
+        bottom: -50%;
         rotate: 90deg;
+        transform-origin: right;
+
+        @include breakpoint($tablet) {
+          margin-left: calc(var(--margin) / 2);
+        }
+
+        @include breakpoint($laptop) {
+          margin-left: calc((var(--margin) * 1.6) / 2);
+        }
+  
+        @include breakpoint($commonScreen) {
+          margin-left: var(--margin);
+        }
       }
 
       h3 {
-        font-size: 2rem;
+        font-size: 1.4rem;
         font-weight: bold;
         text-align: end;
       }
+
       small {
         font-weight: bold;
         text-align: end;
       }
     }
-    &__links {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      justify-items: center;
-      list-style: none;
-      width: 100%;
 
-      @include breakpoint($wide) {
+    &__links {
+      height: 100%;
+      list-style: none;
+
+      @include breakpoint($commonScreen) {
         grid-column: 2/3;
         padding: 4rem 1rem;
       }
@@ -78,6 +115,14 @@
         justify-content: flex-end;
         padding: 1rem 1rem 0 0;
         text-decoration: none;
+
+        &[title='Github'] {
+          i {
+            @include tabletAndBelow {
+              color: $blue500;
+            }
+          }
+        }
       }
 
       li:last-of-type {
@@ -86,6 +131,7 @@
         }
       }
     }
+
     &__icon {
       font-size: 1.5rem;
       margin-right: 1rem;
